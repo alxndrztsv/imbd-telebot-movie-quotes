@@ -17,23 +17,6 @@ chosen_movies = {}
 movie_quotes = []
 
 
-# # method represents binary search
-# def binary_search(array, x):
-#     low = 0
-#     high = len(array) - 1
-#
-#     while low <= high:
-#         mid = (high + low) // 2
-#         if array[mid][1] < x:
-#             low = mid + 1
-#         elif array[mid][1] > x:
-#             high = mid - 1
-#         else:
-#             return array[mid]
-#     # There is no such item
-#     return -1
-
-
 # method gets all quotes from the page
 def get_quotes(code):
     url = 'https://www.imdb.com/title/' + code + '/quotes'
@@ -125,4 +108,4 @@ def ask_repeat(message):
     bot.register_next_step_handler(message, send_another_quote)
 
 
-bot.polling(none_stop=True, interval=20)
+bot.polling(none_stop=True, interval=0, timeout=20)
